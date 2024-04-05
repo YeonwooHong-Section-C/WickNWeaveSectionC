@@ -1,0 +1,50 @@
+.custom-color {
+    background-color: #FEFAF0;
+    color: #403F2B;
+}
+
+.nav {
+    color: #403F2B;
+}
+
+.nav a{
+    color: #403F2B;
+}
+
+.nav h2 {
+    border-bottom: 1px solid #D8D5C9;
+    padding-bottom: 1rem;
+    font-size: clamp(1.5rem, 2vw, 1.5rem);
+    color: #403F2B;
+}
+
+header h1{
+    font-size: clamp(3rem, 5vw, 3rem);
+}
+
+header p {
+    padding-bottom: 1rem;
+}
+
+header .btn{
+    border: none;
+}
+
+.filter1 {
+    border-bottom: 1px solid #D8D5C9;
+    padding-bottom: 2rem;
+}
+
+.form-check-input {
+    background-color: #FEFAF0;
+}
+
+.card {
+    border: none;
+    background-color: #FEFAF0;
+    color: #403F2B;
+}
+
+.card img {
+    border-radius: 2rem;
+}
