@@ -45,6 +45,14 @@ header .btn{
     color: #403F2B;
 }
 
+.card.show {
+    display: block;
+}
+
+.card.hide {
+    display: none;
+}
+
 .card img {
     border-radius: 2rem;
 }
