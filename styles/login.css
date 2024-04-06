@@ -1,102 +1,175 @@
 body {
-    margin: 0;
-    font-size: 18px;
-    background-color: #fefaf0;
-    color: rgb(48, 48, 36);
+  margin: 0;
+  font-family: "Barlow", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 19px;
+  background-color: #fefaf0;
+  color: rgb(48, 48, 36);
 }
 
+@media only screen and (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 576px) {
+  body {
+    font-size: 12px;
+  }
+}
+
+/* Navbar */
 .navbar {
-    font-size: 25px;
-    overflow: hidden;
-    background-color: #e8e59b;
-    display: flex;
-    justify-content: space-between;
-    margin: 0 auto;
-    align-items: center;
+  font-size: 25px;
+  overflow: hidden;
+  background-color: #e8e59b;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  align-items: center;
+  height: 5rem;
 }
 
 .navbar a {
-    float: left;
-    display: block;
-    text-align: center;
-    padding: 14px 20px;
-    text-decoration: none;
+  float: left;
+  display: block;
+  text-align: center;
+  padding: 14px 20px;
+  text-decoration: none;
 }
 
 .dropdown {
-    float: left;
-    overflow: hidden;
+  float: left;
+  overflow: hidden;
 }
 
 .dropdown .dropbtn {
-    font-size: 25px;
-    border: none;
-    outline: none;
-    padding: 14px 20px;
-    background-color: inherit;
-    margin: 0;
+  font-size: 25px;
+  border: none;
+  outline: none;
+  padding: 14px 20px;
+  background-color: inherit;
+  margin: 0;
 }
 
 .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #e8e59b;
-    width: 100%;
-    z-index: 1;
+  display: none;
+  position: absolute;
+  background-color: #e8e59b;
+  width: 100%;
+  z-index: 1;
 }
 
 /* navbar content text */
 .dropdown-content a {
-    float: none;
-    color: rgb(48, 48, 36);
-    padding: 12px 20px;
-    text-decoration: none;
-    display: block;
-    text-align: left;
+  float: none;
+  color: rgb(48, 48, 36);
+  padding: 12px 20px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
 }
 
 .dropdown-content a:hover {
-    color: rgb(98, 99, 56);
+  color: rgb(98, 99, 56);
 }
 
 .dropdown:hover .dropdown-content {
-    display: block;
+  display: block;
 }
 
 @media screen and (max-width: 600px) {
 
-    .navbar a,
-    .dropdown .dropbtn {
-        float: none;
-        display: block;
-        text-align: left;
-    }
+  .navbar a,
+  .dropdown .dropbtn {
+    float: none;
+    display: block;
+    text-align: left;
+  }
 
-    .dropdown {
-        display: block;
-    }
+  .dropdown {
+    display: block;
+  }
 }
 
 .logo-text {
-    position: relative;
-    margin: auto;
-    padding-right: 2.5rem;
+  position: relative;
+  margin: auto;
+  padding-right: 5.5rem;
 }
 
+/* login form */
+#login-form {
+  /* whole - navbar(5)+footer(7.1) */
+  height: calc(100vh - 12rem);
+}
+
+.container {
+  text-align: center;
+}
+
+.login-wrapper {
+  padding-top: 5%;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.login-wrapper::after {
+  display: block;
+  content: "";
+  border-bottom: 1px solid grey;
+  padding-bottom: 10%;
+}
+
+.login-text {
+  text-align: left;
+  padding-bottom: 7%;
+}
+
+.login-text::after {
+  display: block;
+  content: "";
+  border-bottom: 1px solid grey;
+}
+
+.group {
+  padding: 0.3rem;
+}
+
+.input {
+  width: 100%;
+  height: 2rem;
+}
+
+.sub-wrapper{
+  width: 40%;
+  margin: auto;
+}
+
+#check-wrapper {
+  padding-bottom: 10%;
+  text-align: left;
+}
+
+.btn {
+  align-items: center;
+  border-radius: 20px;
+  background-color: #757548;
+  width: 12rem;
+  color: #fefaf0;
+  padding: 14px 60px;
+  border: none;
+  cursor: pointer;
+}
+
+/* footer */
 .footer {
-    background-color: #e8e59b;
-    text-align: center;
-    padding-bottom: 3rem;
-    border-top: 1px solid rgb(48, 48, 36);
-}
+  background-color: #e8e59b;
+  text-align: center;
+  padding-top: 1rem;
+  height: 7.1rem;
+  border-top: 1px solid rgb(48, 48, 36);
 
-.btn{
-    align-items: center;
-    border-radius: 20px;
-    background-color: #757548;
-    width: 12rem;
-    /* max-width: 100%; */
-    color: #fefaf0;
-    padding: 14px 60px;
-    border: none;
 }
