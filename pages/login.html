@@ -1,13 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wick & Weave</title>
-    <link rel="stylesheet" href="../styles/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wick & Weave</title>
+  <link rel="stylesheet" href="../styles/login.css">
 </head>
+
 <body>
+  <!-- Navbar, header -->
+  <div class="navbar">
+    <div class="dropdown">
+      <button class="dropbtn">Menu
+        <!-- <i class="fa fa-caret-down"></i> -->
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Home</a>
+        <a href="#">Product</a>
+        <a href="#">Sth</a>
+      </div>
+    </div>
+
+    <div class="logo-text">Wick & Weave</div>
+  </div>
+  <!-- Login form -->
+  <form id="loginForm">
+    <div>Login</div>
+    <div class="form-group">
+      <input type="text" class="form-control" id="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <input type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <div class="form-group form-check">
+      <input type="checkbox" class="form-check-input" id="rememberMe">
+      <label class="form-check-label" for="rememberMe">Remember me</label>
+    </div>
+    <button type="submit" class="btn">Login</button>
+  </form>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2024 by Wick & Weave. Powered and secured by AACDY</p>
+  </footer>
+
+  <script src="../scripts/login.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const loginForm = document.getElementById('loginForm');
     
-    <script src="../scripts/login.js"></script>
+      loginForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+    
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        const rememberMe = document.getElementById('rememberMe').checked;
+    
+        // empty value
+        if (username === false || password === false) {
+          // Store user data in session storage
+          sessionStorage.setItem('loggedIn', true);
+          sessionStorage.setItem('username', username);
+    
+          // Optionally, store remember me preference in local storage
+          if (rememberMe) {
+            localStorage.setItem('rememberMe', true);
+            localStorage.setItem('username', username); 
+          } else {
+            localStorage.removeItem('rememberMe');
+            localStorage.removeItem('username');
+          }
+    
+          // Redirect to home page or perform any other action
+          window.location.href = 'login_test.html';
+        } else {
+          alert('Invalid username or password');
+        }
+      });
+    
+      // Check if user was previously logged in
+      const rememberMe = localStorage.getItem('rememberMe');
+      const loggedIn = sessionStorage.getItem('loggedIn');
+    
+      if (rememberMe && loggedIn) {
+        const storedUsername = localStorage.getItem('username');
+        sessionStorage.setItem('username', storedUsername);
+        window.location.href = 'login.html';
+      }
+    });
+    </script>
 </body>
+
 </html>
