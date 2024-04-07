@@ -7,6 +7,7 @@ let addCart = document.querySelector('.add');
 
 let userCart = JSON.parse(localStorage.getItem('cart'));
 console.log(userCart);
+
 let cart = [];
 
 const productsArray = [
@@ -84,14 +85,14 @@ addCart.addEventListener('click', function () {
 });
 
 //function to overwrite value in array if duplicate is present
-function checkCopy(array, item, key='name'){
+function checkCopy(array, item, key = 'name') {
     const index = array.findIndex(e => e[key] === item[key]);
     if (index >= 0) {
         array[index] = item;
-      }
-      else {
+    }
+    else {
         array.push(item);
-      }
+    }
 };
 
 
