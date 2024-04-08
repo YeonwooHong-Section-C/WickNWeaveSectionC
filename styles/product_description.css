@@ -11,15 +11,20 @@ body {
     object-fit: cover;
     object-position: center;
     height: 200px;
+    border-radius: 12px;
 }
 
 .main-img {
-    height: 600px;
+    height: 550px;
 }
 
 .info {
     display: inline-block;
-    height: 300px;
+    height: 200px;
+}
+
+.product-desc {
+    display: inline-block;
 }
 
 .product-left img {
@@ -39,10 +44,30 @@ body {
 .product-name {
     color: #403f2b;
     font-size: 2rem;
+    font-weight: bold;
 }
 
 .price {
     font-size: 1.5rem;
+    opacity: 0.7;
+}
+
+input,
+select {
+    margin-bottom: 1.5rem;
+}
+
+.btn {
+    border-radius: 32px;
+}
+
+.add {
+    background-color: #403f2b;
+    color: #fefaf0;
+}
+
+.buy {
+    border: 1px solid #403f2b;
 }
 
 .carousel-inner {
