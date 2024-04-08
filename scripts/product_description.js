@@ -77,15 +77,13 @@ addCart.addEventListener('click', function () {
             product.prod_quantity = quantity;
             checkCopy(cart, product);
             localStorage.setItem('cart', JSON.stringify(cart));
-            // cart.push([product.name, product.price, product.id]);
         }
     })
     console.log(cart);
-
 });
 
 //function to overwrite value in array if duplicate is present
-function checkCopy(array, item, key = 'name') {
+function checkCopy(array, item, key = 'prod_name') {
     const index = array.findIndex(e => e[key] === item[key]);
     if (index >= 0) {
         array[index] = item;
