@@ -1,0 +1,248 @@
+* {
+    background-color: #fefaf0;
+    font-weight: 150 !important;
+}
+
+.cartParentContainer {
+    padding: 0 15%;
+    display: flex;
+    margin: 3rem 0 !important;
+}
+
+.cartParentContainer>section {
+    flex-grow: 1;
+}
+
+
+.cartParentContainer>aside {
+    flex-basis: 25%;
+}
+
+.checkoutButton {
+    background-color: #757548;
+
+    border-radius: 25px;
+    color: rgb(254, 250, 240);
+}
+
+.eachProductContainerInCart {
+    display: flex;
+    margin-top: 1%;
+    margin-bottom: 1%;
+}
+
+.cartProductDetails {
+    display: flex;
+    flex-basis: 100%;
+    margin: 0 3%;
+    padding: 0.3rem;
+}
+
+.prodQtyContainer {
+    display: flex;
+    gap: 20px;
+    flex: 1;
+}
+
+.prodNameAndPrice {
+    flex-basis: 25%;
+    flex-grow: 1;
+}
+
+.parentContainerForQty {
+    flex-shrink: 0;
+    width: auto;
+}
+
+button {
+    border: 0px;
+}
+
+select {
+    text-align: center;
+}
+
+.priceBasedOnQty {
+    text-align: right;
+    flex-basis: 60%;
+    flex-shrink: 0;
+    overflow-x: visible;
+    z-index: 10;
+}
+
+li {
+    list-style-type: none;
+    padding-top: 1.5rem;
+    padding-bottom: 1.8rem;
+}
+
+.emptyCartSection {
+    display: none;
+    margin: auto;
+    transform: translateY(50%);
+    height: 30vh;
+    border-bottom: 1px solid #d7d5c9;
+}
+
+h4 {
+    padding-bottom: 0.8rem;
+    border-bottom: 1px solid #d7d5c9;
+    margin-bottom: 0px !important;
+}
+
+.nonEmptyCartSection {
+    display: block;
+}
+
+.checkoutButton:hover {
+    background-color: #757548c0;
+}
+
+.productImageInCart {
+    border: 1px solid #d7d5c9;
+    height: 136px;
+    width: 100px;
+}
+
+.deleteProductBtn {
+    color: #8b8a7a;
+}
+
+dt,
+dd {
+    padding-top: 0.5rem;
+    padding-bottom: 0.4rem;
+}
+
+.removeElement {
+    animation: removeElementAnimation forwards 0.7s ease-out 1;
+}
+
+@keyframes removeElementAnimation {
+    0% {
+        transform: scale(1);
+        width: 100%;
+        min-width: 100%;
+        opacity: 1;
+        transform-origin: 125px 125px;
+    }
+
+    50% {
+        transform: scale(0);
+        opacity: 0;
+    }
+
+    100% {
+        width: 0;
+        min-width: 0;
+        transform: scale(0);
+        opacity: 0;
+        padding: 0;
+        margin: 0;
+    }
+}
+
+@media (max-width: 450px) {
+    .cartParentContainer {
+        flex-direction: column;
+        padding: 0 1rem !important;
+    }
+
+    .cartProductDetails {
+        flex-direction: column;
+    }
+
+    .prodQtyContainer {
+        justify-content: space-between;
+    }
+
+    aside>h4 {
+        display: none;
+    }
+
+    .cartParentContainer > aside{
+        margin-left: 0px !important;
+    }
+}
+
+@media (min-width: 451px) and (max-width: 576px) {
+    .cartParentContainer {
+        flex-direction: column;
+        padding: 0 4rem !important;
+    }
+
+    .cartProductDetails {
+        flex-direction: column;
+    }
+
+    .prodQtyContainer {
+        justify-content: space-between;
+    }
+
+    aside>h4 {
+        display: none;
+    }
+
+    .cartParentContainer > aside{
+        margin-left: 0px !important;
+    }
+}
+
+@media (min-width: 577px) and (max-width: 768px) {
+    .cartParentContainer {
+        flex-direction: column;
+        padding: 0 3.5rem !important;
+    }
+
+    .cartParentContainer>section {
+        padding: 0rem !important;
+    }
+
+    .cartParentContainer > aside{
+        margin-left: 0px !important;
+    }
+
+    aside>h4 {
+        display: none;
+    }
+
+    .prodQtyContainer {
+        gap: 0px;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+
+    .cartParentContainer {
+        flex-direction: column;
+        padding: 0 20% !important;
+    }
+
+    .cartParentContainer>section {
+        padding: 0rem !important;
+    }
+
+    .cartParentContainer > aside{
+        margin-left: 0px !important;
+    }
+
+    aside>h4 {
+        display: none;
+    }
+}
+
+
+@media (min-width: 993px) and (max-width: 1100px) {
+
+    .cartParentContainer {
+        padding: 0 2rem !important;
+    }
+
+    .cartParentContainer>section {
+        padding: 0rem !important;
+    }
+
+    aside {
+        flex-basis: 30% !important;
+    }
+}

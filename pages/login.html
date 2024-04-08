@@ -1,13 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Wick & Weave</title>
-    <link rel="stylesheet" href="../styles/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wick & Weave</title>
+  <link rel="stylesheet" href="../styles/login.css">
+  <!-- font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
 </head>
+
 <body>
-    
-    <script src="../scripts/login.js"></script>
+  <!-- Navbar, header -->
+  <div class="navbar">
+
+    <div class="dropdown">
+      <button class="dropbtn">Menu
+      </button>
+      <div class="dropdown-content">
+        <a href="#">Home</a>
+        <a href="#">Product</a>
+        <a href="#">Sth</a>
+      </div>
+    </div>
+
+    <div class="logo-text">Wick & Weave</div>
+
+  </div>
+
+  <!-- Login form -->
+  <div class="container">
+
+    <form id="login-form">
+      <div class="login-wrapper">
+
+        <div class="login-text">Login</div>
+
+        <div class="sub-wrapper">
+          <div class="group">
+            <input type="text" class="input" id="username" placeholder="Username">
+          </div>
+          <div class="group">
+            <input type="password" class="input" id="password" placeholder="Password">
+          </div>
+          <div class="group" id="check-wrapper">
+            <input type="checkbox" class="check-input" id="rememberMe">
+            <label class="check-label" for="rememberMe">Remember me</label>
+          </div>
+        </div>
+
+        <button type="submit" class="btn">Login</button>
+        
+      </div>
+    </form>
+
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer">
+    <p>&copy; 2024 by Wick & Weave. Powered and secured by AACDY</p>
+  </footer>
+
+  <script src="../scripts/login.js"></script>
 </body>
+
 </html>
