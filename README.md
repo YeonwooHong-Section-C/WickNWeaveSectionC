@@ -19,7 +19,7 @@ Wick & Weave offers collection of socks and candles, ideal for those seeking eas
 - Product
     - Sth
 - Product detail
-    - Sth
+    - Stores information from product to be used on the cart page. Uses local storage to keep track of products
 - Cart
     - Utilized JavaScript to dynamically display, update, and remove products from the cart, enhancing the user's shopping experience
 <br><br>
