@@ -36,7 +36,7 @@ const toggleVisibility = () => {
     // all the elements that will be displayed when cart has products in it
     const nonEmptyCartElements = document.querySelectorAll(".nonEmptyCartSection");
 
-    if (productsInCart.length > 0) {
+    if (productsInCart != null) {
         loadCartElementsToPage();
     }
     else{
