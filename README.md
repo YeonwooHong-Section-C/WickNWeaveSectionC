@@ -17,7 +17,7 @@ Wick & Weave offers collection of socks and candles, ideal for those seeking eas
 - Login
     - Implemented using JavaScript to store user information in local storage for automatic login and in session storage for normal login
 - Product
-    - Sth
+    - Implemented using JavaScript to display products and sort them by category.
 - Product detail
     - Stores information from product to be used on the cart page. Uses local storage to keep track of products
 - Cart

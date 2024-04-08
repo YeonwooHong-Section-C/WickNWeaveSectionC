@@ -1,0 +1,161 @@
+.custom-color {
+    background-color: #FEFAF0;
+    color: #403F2B;
+}
+
+/* Navbar */
+.navbar {
+    font-size: 25px;
+    overflow: hidden;
+    background-color: #e8e59b;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 auto;
+    align-items: center;
+    height: 5rem;
+  }
+  
+  .navbar a {
+    float: left;
+    display: block;
+    text-align: center;
+    padding: 14px 20px;
+    text-decoration: none;
+  }
+  
+  .dropdown {
+    float: left;
+    overflow: hidden;
+  }
+  
+  .dropdown .dropbtn {
+    font-size: 25px;
+    border: none;
+    outline: none;
+    padding: 14px 20px;
+    background-color: inherit;
+    margin: 0;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #e8e59b;
+    width: 100%;
+    z-index: 1;
+  }
+  
+  /* navbar content text */
+  .dropdown-content a {
+    float: none;
+    color: rgb(48, 48, 36);
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .dropdown-content a:hover {
+    color: rgb(98, 99, 56);
+  }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+  @media screen and (max-width: 600px) {
+  
+    .navbar a,
+    .dropdown .dropbtn {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  
+    .dropdown {
+      display: block;
+    }
+  }
+  
+  .logo-text {
+    position: relative;
+    margin: auto;
+    padding-right: 5.5rem;
+  }
+
+/* nav */
+
+.nav {
+    color: #403F2B;
+}
+
+.nav a{
+    color: #403F2B;
+}
+
+.nav h2 {
+    border-bottom: 1px solid #D8D5C9;
+    padding-bottom: 1rem;
+    font-size: clamp(1.5rem, 2vw, 1.5rem);
+    color: #403F2B;
+}
+
+/* header */
+
+header h1{
+    font-size: clamp(3rem, 5vw, 3rem);
+}
+
+header p {
+    padding-bottom: 1rem;
+}
+
+header .btn{
+    border: none;
+}
+
+/* filter */
+
+.filter1 {
+    border-bottom: 1px solid #D8D5C9;
+    padding-bottom: 2rem;
+}
+
+/* input */
+
+.form-check-input {
+    background-color: #FEFAF0;
+}
+
+/* card */
+
+.card {
+    border: none;
+    background-color: #FEFAF0;
+    color: #403F2B;
+}
+
+.card img {
+    border-radius: 2rem;
+}
+
+/* show and hide card */
+
+.card.show {
+    display: block;
+}
+
+.card.hide {
+    display: none;
+}
+
+/* footer */
+
+.footer {
+    background-color: #e8e59b;
+    text-align: center;
+    padding-top: 1rem;
+    height: 7.1rem;
+    border-top: 1px solid rgb(48, 48, 36);
+  
+  }
