@@ -102,8 +102,19 @@
 
 /* header */
 
+header h1 {
+  margin: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+  header h1 {
+    margin: 1rem;
+    padding: 1rem;
+  }
+}
+
 header h1{
-    font-size: clamp(3rem, 5vw, 3rem);
+    font-size: clamp(2rem, 5vw, 3rem);
 }
 
 header p {
