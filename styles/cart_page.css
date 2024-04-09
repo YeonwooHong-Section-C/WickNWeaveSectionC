@@ -1,12 +1,17 @@
-* {
+main {
     background-color: #fefaf0;
     font-weight: 150 !important;
+}
+
+body {
+    background-color: #fefaf0 !important;
 }
 
 .cartParentContainer {
     padding: 0 15%;
     display: flex;
     margin: 3rem 0 !important;
+    min-height: calc(100vh - 18rem);;
 }
 
 .cartParentContainer>section {
@@ -58,6 +63,10 @@ button {
     border: 0px;
 }
 
+select, .deleteProductBtn{
+    background-color: #fefaf0;
+}
+
 select {
     text-align: center;
 }
@@ -79,9 +88,12 @@ li {
 .emptyCartSection {
     display: none;
     margin: auto;
-    transform: translateY(50%);
-    height: 30vh;
+    height: calc(100vh - 20.5rem);
     border-bottom: 1px solid #d7d5c9;
+}
+
+.emptyCartSection > div {
+    margin: auto;
 }
 
 h4 {
@@ -112,6 +124,15 @@ dt,
 dd {
     padding-top: 0.5rem;
     padding-bottom: 0.4rem;
+}
+
+.modalHeaderFootereCust{
+    background-color: #e8e59b !important;
+}
+
+.modalBtnCust{
+    background-color: #757548 !important;
+    color: white !important;
 }
 
 .removeElement {
@@ -148,6 +169,10 @@ dd {
         padding: 0 1rem !important;
     }
 
+    .cartParentContainer > section {
+        flex-grow:0;
+    }
+
     .cartProductDetails {
         flex-direction: column;
     }
@@ -170,6 +195,11 @@ dd {
         flex-direction: column;
         padding: 0 4rem !important;
     }
+
+    .cartParentContainer > section {
+        flex-grow:0;
+    }
+
 
     .cartProductDetails {
         flex-direction: column;
@@ -196,6 +226,7 @@ dd {
 
     .cartParentContainer>section {
         padding: 0rem !important;
+        flex-grow: 0;
     }
 
     .cartParentContainer > aside{
@@ -220,6 +251,7 @@ dd {
 
     .cartParentContainer>section {
         padding: 0rem !important;
+        flex-grow: 0;
     }
 
     .cartParentContainer > aside{
