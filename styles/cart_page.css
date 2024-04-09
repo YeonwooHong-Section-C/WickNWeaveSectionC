@@ -126,13 +126,14 @@ dd {
     padding-bottom: 0.4rem;
 }
 
-.modalHeaderFootereCust{
+.modalHeaderCust{
     background-color: #e8e59b !important;
 }
 
 .modalBtnCust{
     background-color: #757548 !important;
     color: white !important;
+    border-radius: 25px !important;
 }
 
 .removeElement {
