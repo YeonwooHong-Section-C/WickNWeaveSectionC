@@ -146,6 +146,10 @@ header .btn{
     color: #403F2B;
 }
 
+.card:hover{
+  
+}
+
 .card img {
     border-radius: 2rem;
 }
