@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', function () {
       // Empty value is not allowded
       if (username && password) {
         // Store user data in session storage
-        sessionStorage.setItem('loggedIn', true);
+        sessionStorage.setItem('loggedIn', JSON.stringify(true));
         sessionStorage.setItem('username', username);
 
         // If rememberMe is checked, store in local storage
         if (rememberMe) {
-          localStorage.setItem('rememberMe', true);
+          localStorage.setItem('rememberMe', JSON.stringify(true));
           localStorage.setItem('username', username);
         } else {
           localStorage.removeItem('rememberMe');
