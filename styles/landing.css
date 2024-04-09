@@ -1,0 +1,34 @@
+.p-5 text-center bg-image {
+    height: 400px;
+    width: 100%;
+}
+carousel-row {
+    display: block;
+    margin:auto;
+}
+
+.carousel .carousel-item img {
+    object-fit: cover;
+    object-position: center;
+    height: 200px;
+    border-radius: 12px;
+}
+.carousel-inner {
+    padding: 2rem;
+    margin: auto;
+}
+
+.carousel-indicators {
+    margin-bottom: 0;
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+    width: 2rem;
+}
+.block {
+    background-color: black;
+    margin: auto;
+    width: 100%;
+    height: 300px;
+}
