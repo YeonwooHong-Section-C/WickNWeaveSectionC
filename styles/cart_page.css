@@ -5,13 +5,19 @@ main {
 
 body {
     background-color: #fefaf0 !important;
+
+    font-family: "Barlow", sans-serif;
+    font-weight: 200;
+    font-style: normal;
+    font-size: 19px;
 }
 
 .cartParentContainer {
     padding: 0 15%;
     display: flex;
     margin: 3rem 0 !important;
-    min-height: calc(100vh - 18rem);;
+    min-height: calc(100vh - 18rem);
+    ;
 }
 
 .cartParentContainer>section {
@@ -63,7 +69,8 @@ button {
     border: 0px;
 }
 
-select, .deleteProductBtn{
+select,
+.deleteProductBtn {
     background-color: #fefaf0;
 }
 
@@ -92,7 +99,7 @@ li {
     border-bottom: 1px solid #d7d5c9;
 }
 
-.emptyCartSection > div {
+.emptyCartSection>div {
     margin: auto;
 }
 
@@ -126,11 +133,11 @@ dd {
     padding-bottom: 0.4rem;
 }
 
-.modalHeaderCust{
+.modalHeaderCust {
     background-color: #e8e59b !important;
 }
 
-.modalBtnCust{
+.modalBtnCust {
     background-color: #757548 !important;
     color: white !important;
     border-radius: 25px !important;
@@ -170,8 +177,8 @@ dd {
         padding: 0 1rem !important;
     }
 
-    .cartParentContainer > section {
-        flex-grow:0;
+    .cartParentContainer>section {
+        flex-grow: 0;
     }
 
     .cartProductDetails {
@@ -186,7 +193,7 @@ dd {
         display: none;
     }
 
-    .cartParentContainer > aside{
+    .cartParentContainer>aside {
         margin-left: 0px !important;
     }
 }
@@ -197,8 +204,8 @@ dd {
         padding: 0 4rem !important;
     }
 
-    .cartParentContainer > section {
-        flex-grow:0;
+    .cartParentContainer>section {
+        flex-grow: 0;
     }
 
 
@@ -214,7 +221,7 @@ dd {
         display: none;
     }
 
-    .cartParentContainer > aside{
+    .cartParentContainer>aside {
         margin-left: 0px !important;
     }
 }
@@ -230,7 +237,7 @@ dd {
         flex-grow: 0;
     }
 
-    .cartParentContainer > aside{
+    .cartParentContainer>aside {
         margin-left: 0px !important;
     }
 
@@ -255,7 +262,7 @@ dd {
         flex-grow: 0;
     }
 
-    .cartParentContainer > aside{
+    .cartParentContainer>aside {
         margin-left: 0px !important;
     }
 
