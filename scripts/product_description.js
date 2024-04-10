@@ -6,6 +6,7 @@ let info = document.querySelector('.info');
 let addCart = document.querySelector('.add');
 
 let loggedIn = JSON.parse(localStorage.getItem('rememberMe'));
+let currentProduct = JSON.parse(localStorage.getItem('currentProduct'));
 
 if (loggedIn == true){
     let memberCart = JSON.parse(localStorage.getItem('cart_1'));
@@ -85,13 +86,35 @@ addCart.addEventListener('click', function () {
                 checkCopy(cart, product);
                 localStorage.setItem('cart_2', JSON.stringify(cart));
             }
+            console.log(cart);
         }
+        
     });
 });
 
+// loading image from product page
+
+function currentSwap(product, main){
+    images.forEach(image => {
+        if (product.prod_img == image.src){
+            let mainsrc = main.src;
+            main.src = product.prod_img;
+            productName.textContent = product.prod_name;
+                price.textContent = product.prod_price;
+                main.id = product.id;
+                info.textContent = product.description;
+                addCart.id = product.id;
+                image.src=mainsrc;
+
+        }
+    });
+}
+
+currentSwap(currentProduct, main);
+
 //function to overwrite value in array if duplicate is present
-function checkCopy(array, item, key = 'prod_name') {
-    const index = array.findIndex(e => e[key] === item[key]);
+function checkCopy(array, item, key = 'id') {
+    const index = array.findIndex(e => e[key] == item[key]);
     if (index >= 0) {
         array[index] = item;
     }
@@ -100,6 +123,5 @@ function checkCopy(array, item, key = 'prod_name') {
     }
 };
 
-// update pictute based on image clicked, otherwise defualt is 4
 
 
