@@ -1,6 +1,9 @@
-.p-5 text-center bg-image {
-    height: 400px;
-    width: 100%;
+ .ball {
+min-width: 100%;
+height: 400px;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    
 }
 carousel-row {
     display: block;
@@ -27,8 +30,20 @@ carousel-row {
     width: 2rem;
 }
 .block {
-    background-color: black;
+    background-color: #e8e59b;
     margin: auto;
     width: 100%;
     height: 300px;
+}
+
+.card:hover{
+    transform: scale(1.055);
+    
+}
+
+.a {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px 0;
+    
 }
