@@ -5,6 +5,7 @@ let productsInCart = null;
 const TAXES = 0.13;
 
 let local_storage_name;
+let loggedInUsers_name = "";
 
 const pullCartData = () => {
     if(sessionStorage.getItem('username') || localStorage.getItem('username')){
@@ -165,4 +166,13 @@ const orderPlaced = () => {
     document.getElementById("orderDetail").innerHTML = document.querySelector("aside > div").innerHTML;
     productsInCart = [];
     localStorage.removeItem("cart");
+
+
+    if(JSON.parse(localStorage.getItem('rememberMe'))){
+        loggedInUsers_name = ", " + localStorage.getItem("username");
+    }
+    else if(sessionStorage.getItem("username")){
+        loggedInUsers_name = ", " +  sessionStorage.getItem("username");
+    }
+    document.getElementById("users_name").textContent = loggedInUsers_name;
 }
