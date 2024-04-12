@@ -5,10 +5,10 @@ let price = document.querySelector('.price');
 let info = document.querySelector('.info');
 let addCart = document.querySelector('.add');
 
-let loggedIn = JSON.parse(localStorage.getItem('rememberMe'));
+let loggedIn = JSON.parse(sessionStorage.getItem('username')), remember = JSON.parse(localStorage.getItem('username'));
 let currentProduct = JSON.parse(localStorage.getItem('currentProduct'));
 
-if (loggedIn == true){
+if (loggedIn || remember){
     let memberCart = JSON.parse(localStorage.getItem('cart_1'));
 } else {
     let notMemberCart = JSON.parse(localStorage.getItem('cart_2'));
@@ -79,7 +79,7 @@ addCart.addEventListener('click', function () {
     productsArray.forEach(product => {
         if (addCart.id == product.id) {
             product.prod_quantity = quantity;
-            if (loggedIn === true && typeof notMemberCart != undefined){
+            if ((loggedIn || remember) && typeof notMemberCart != undefined){
                 checkCopy(cart, product);
                 localStorage.setItem('cart_1', JSON.stringify(cart));
             } else {
