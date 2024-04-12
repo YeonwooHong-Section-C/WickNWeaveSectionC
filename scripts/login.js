@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         // Redirect to home page or perform other actions
-        window.location.href = 'home.html';
+        window.location.href = 'landing.html';
       } else {
         alert('Invalid username or password');
       }
@@ -37,6 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
     if (rememberMe && loggedIn) {
       const storedUsername = localStorage.getItem('username');
       sessionStorage.setItem('username', storedUsername);
-      window.location.href = 'home.html';
+      window.location.href = 'landing.html';
     }
   });
