@@ -1,3 +1,30 @@
+// If logged in, show username at navbar instead of login btn
+const localUsername = localStorage.getItem('username');
+const sessionUsername = sessionStorage.getItem('username');
+
+if (localUsername || sessionUsername) {
+  const login_element = document.getElementById('login');
+  login_element.textContent = `Hello, ${sessionUsername}`
+  login_element.removeAttribute('href');
+}
+
+
+// If cart item added, show the number of items at navbar
+const cartItemRemember = localStorage.getItem('cart_1');
+const cartItem = localStorage.getItem('cart_2');
+let itemLength = 0
+
+if (cartItem) {
+  itemLength = JSON.parse(cartItem).length;
+} else if (cartItemRemember) {
+  itemLength = JSON.parse(cartItemRemember).length;
+}
+
+const cart_element = document.getElementById('cart');
+const numOfItems = document.createTextNode(` (${itemLength})`);
+cart_element.appendChild(numOfItems);
+
+
 document.addEventListener('DOMContentLoaded', function () {
     const loginForm = document.getElementById('login-form');
 
@@ -23,7 +50,10 @@ document.addEventListener('DOMContentLoaded', function () {
           localStorage.removeItem('username');
         }
 
-        // Redirect to home page or perform other actions
+        // Redirect to home page or perform other actions, change login btn to username
+        const element = document.getElementById('login');
+        element.textContent = `Hello, ${username}`
+
         window.location.href = 'landing.html';
       } else {
         alert('Invalid username or password');
@@ -37,6 +67,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (rememberMe && loggedIn) {
       const storedUsername = localStorage.getItem('username');
       sessionStorage.setItem('username', storedUsername);
+
+      const element = document.getElementById('login');
+      element.textContent = `Hello, ${storedUsername}`
+
       window.location.href = 'landing.html';
+
     }
   });
