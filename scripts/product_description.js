@@ -12,7 +12,9 @@ let cart = [];
 
 if (loggedIn || remember){
     let memberCart = JSON.parse(localStorage.getItem('cart_1'));
-    cart = memberCart;
+    if (localStorage.getItem('cart_1')){
+        cart = memberCart;
+    }
 } else {
     let notMemberCart = JSON.parse(localStorage.getItem('cart_2'));
     cart = notMemberCart;
@@ -82,7 +84,9 @@ addCart.addEventListener('click', function () {
         if (addCart.id == product.id) {
             product.prod_quantity = quantity;
             if ((loggedIn || remember) && typeof notMemberCart != undefined){
+                console.log("abc");
                 checkCopy(cart, product);
+                console.log("abc1");
                 localStorage.setItem('cart_1', JSON.stringify(cart));
             } else {
                 checkCopy(cart, product);
