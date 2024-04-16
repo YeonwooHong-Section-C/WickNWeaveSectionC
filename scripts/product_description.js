@@ -5,8 +5,14 @@ let price = document.querySelector('.price');
 let info = document.querySelector('.info');
 let addCart = document.querySelector('.add');
 
-let userCart = JSON.parse(localStorage.getItem('cart'));
-console.log(userCart);
+let loggedIn = JSON.parse(sessionStorage.getItem('username')), remember = JSON.parse(localStorage.getItem('username'));
+let currentProduct = JSON.parse(localStorage.getItem('currentProduct'));
+
+if (loggedIn || remember){
+    let memberCart = JSON.parse(localStorage.getItem('cart_1'));
+} else {
+    let notMemberCart = JSON.parse(localStorage.getItem('cart_2'));
+}
 
 let cart = [];
 
@@ -68,25 +74,47 @@ images.forEach(image => {
 });
 
 // adding items to cart
-
 addCart.addEventListener('click', function () {
     let quantity = document.querySelector('.quantity').value;
-    console.log(quantity);
     productsArray.forEach(product => {
         if (addCart.id == product.id) {
             product.prod_quantity = quantity;
-            checkCopy(cart, product);
-            localStorage.setItem('cart', JSON.stringify(cart));
-            // cart.push([product.name, product.price, product.id]);
+            if ((loggedIn || remember) && typeof notMemberCart != undefined){
+                checkCopy(cart, product);
+                localStorage.setItem('cart_1', JSON.stringify(cart));
+            } else {
+                checkCopy(cart, product);
+                localStorage.setItem('cart_2', JSON.stringify(cart));
+            }
+            console.log(cart);
         }
-    })
-    console.log(cart);
-
+        
+    });
 });
 
+// loading image from product page
+
+function currentSwap(product, main){
+    images.forEach(image => {
+        if (product.prod_img == image.src){
+            let mainsrc = main.src;
+            main.src = product.prod_img;
+            productName.textContent = product.prod_name;
+                price.textContent = product.prod_price;
+                main.id = product.id;
+                info.textContent = product.description;
+                addCart.id = product.id;
+                image.src=mainsrc;
+
+        }
+    });
+}
+
+currentSwap(currentProduct, main);
+
 //function to overwrite value in array if duplicate is present
-function checkCopy(array, item, key = 'name') {
-    const index = array.findIndex(e => e[key] === item[key]);
+function checkCopy(array, item, key = 'id') {
+    const index = array.findIndex(e => e[key] == item[key]);
     if (index >= 0) {
         array[index] = item;
     }
@@ -94,7 +122,6 @@ function checkCopy(array, item, key = 'name') {
         array.push(item);
     }
 };
-
 
 
 

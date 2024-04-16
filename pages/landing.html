@@ -16,17 +16,24 @@
     <header>
         <!-- Navbar, header -->
         <div class="main-navbar">
+
             <div class="nav-dropdown">
-                <button class="nav-dropbtn">Menu</button>
+                <button class="nav-dropbtn">Menu
+                </button>
                 <div class="nav-dropdown-content">
-                    <a href="#">Home</a>
-                    <a href="product_page.html">Product</a>
-                    <a href="#">Sth</a>
+                    <a class="dropdown-link" href="landing.html">Home</a>
+                    <a class="dropdown-link" href="product_page.html">Product</a>
+                    <a class="dropdown-link" href="cart_page.html">Cart</a>
+
                 </div>
             </div>
 
-            <div class="nav-logo-text">Wick & Weave</div>
+            <div class="nav-logo-text"><a href="landing.html">Wick & Weave</a></div>
 
+            <div class="logo-link">
+                <div class="logo-cart"><a href="cart_page.html" id="cart">Cart</a></div>
+                <div class="logo-login"><a href="login.html" id="login">Login</a></div>
+            </div>
         </div>
 
 
@@ -182,6 +189,7 @@
         <div class="p-5 text-center bg-image"
             style="
         background-image: url('https://images.unsplash.com/photo-1414124488080-0188dcbb8834?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8N3x8Y296eSUyMGhvbWV8ZW58MHwwfDB8fHww');height: 400px;">
+
             <div class="mask" style="background-color: rgba(0, 0, 0, 0.6);">
                 <div class="d-flex justify-content-center align-items-center h-100">
                     <div class="text-white">
@@ -317,8 +325,9 @@
                 <p>&copy; 2024 by Wick & Weave. Powered and secured by AACDY</p>
             </footer>
             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                crossorigin="anonymous"></script>
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+            <script src="../scripts/login.js" defer></script>
 </body>
 
 </html>

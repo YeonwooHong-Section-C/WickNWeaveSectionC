@@ -15,20 +15,24 @@
 
 <body>
   <!-- Navbar, header -->
-  <div class="navbar">
+  <div class="main-navbar">
 
-    <div class="dropdown">
-      <button class="dropbtn">Menu
+    <div class="nav-dropdown">
+      <button class="nav-dropbtn">Menu
       </button>
-      <div class="dropdown-content">
-        <a href="#">Home</a>
-        <a href="#">Product</a>
-        <a href="#">Sth</a>
+      <div class="nav-dropdown-content">
+        <a class="dropdown-link" href="landing.html">Home</a>
+        <a class="dropdown-link" href="product_page.html">Product</a>
+        <a class="dropdown-link" href="cart_page.html">Cart</a>
       </div>
     </div>
 
-    <div class="logo-text">Wick & Weave</div>
+    <div class="nav-logo-text"><a href="landing.html">Wick & Weave</a></div>
 
+    <div class="logo-link">
+      <div class="logo-cart"><a href="cart_page.html" id="cart">Cart</a></div>
+      <div class="logo-login"><a href="login.html" id="login">Login</a></div>
+    </div>
   </div>
 
   <!-- Login form -->
@@ -53,7 +57,7 @@
         </div>
 
         <button type="submit" class="btn">Login</button>
-        
+
       </div>
     </form>
 

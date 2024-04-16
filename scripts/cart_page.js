@@ -1,8 +1,22 @@
 // cart array with products
-let productsInCart = JSON.parse(localStorage.getItem("cart"));
+let productsInCart = null;
 
 // tax
 const TAXES = 0.13;
+
+let local_storage_name;
+let loggedInUsers_name = "";
+
+const pullCartData = () => {
+    if(sessionStorage.getItem('username') || localStorage.getItem('username')){
+        local_storage_name = "cart_1";
+    }
+    else{
+        local_storage_name = "cart_2";
+    }
+
+    productsInCart = JSON.parse(localStorage.getItem(`${local_storage_name}`));
+}
 
 
 // updates subtotal, tax and total prices
@@ -36,14 +50,15 @@ const toggleVisibility = () => {
     // all the elements that will be displayed when cart has products in it
     const nonEmptyCartElements = document.querySelectorAll(".nonEmptyCartSection");
 
-    if (productsInCart != null) {
-        loadCartElementsToPage();
+    if (productsInCart != null && productsInCart.length > 0) {
+        return false;
     }
     else{
-        document.getElementsByClassName("emptyCartSection")[0].style.display = "block";
+        document.getElementsByClassName("emptyCartSection")[0].style.display = "flex";
         nonEmptyCartElements.forEach((item) => {
             item.style.display = "none";
         });
+        return true;
     }
 }
 
@@ -54,7 +69,7 @@ const deleteProductFromCart = (element, id) => {
     parentElement.classList.add("removeElement");
 
     setTimeout(() => {
-        productsInCart.splice(productsInCart.indexOf(productsInCart.find(item => item.id === id)), 1);
+        productsInCart.splice(productsInCart.findIndex(item => item.id === id), 1);
         parentElement.remove();
         updateOrderSummary();
         toggleVisibility();
@@ -69,7 +84,7 @@ const loadCartElementsToPage = () => {
 
     const selectElement = document.createElement("select");
 
-    for (let i = 1; i <= 20; i++) {
+    for (let i = 1; i <= 25; i++) {
         const optionElement = document.createElement("option");
         optionElement.textContent = i;
         optionElement.value = i;
@@ -119,10 +134,45 @@ const loadCartElementsToPage = () => {
 
 // this runs when document is ready
 $(document).ready(function () {
+    pullCartData();
     toggleVisibility();
+
+    if(!toggleVisibility()){
+        loadCartElementsToPage();
+    }
+
+    
+    document.querySelector('.checkoutButton').addEventListener("click", orderPlaced);
 });
 
 // runs when page unloads
 window.addEventListener("beforeunload", () => {
-    localStorage.setItem("productsInCartArray", JSON.stringify(productsInCart));
+    localStorage.setItem(`${local_storage_name}`, JSON.stringify(productsInCart));
 });
+
+// runs when the user checks out
+const orderPlaced = () => {
+    document.getElementById("reciept").innerHTML = document.getElementById("productCartList").innerHTML;
+    document.getElementById("productCartList").innerHTML = "";
+
+    document.querySelectorAll("select[id*='productQuantity']").forEach(item => {
+        const p = document.createElement("p");
+        p.textContent = "Qty: " + productsInCart.find(product => product.id == item.id.match(/(\d+)/)[0]).prod_quantity;
+        item.replaceWith(p);
+    });
+    document.querySelectorAll(".deleteProductBtn").forEach(item => {
+        item.remove();
+    });
+    document.getElementById("orderDetail").innerHTML = document.querySelector("aside > div").innerHTML;
+    productsInCart = [];
+    localStorage.removeItem("cart");
+
+
+    if(JSON.parse(localStorage.getItem('rememberMe'))){
+        loggedInUsers_name = ", " + localStorage.getItem("username");
+    }
+    else if(sessionStorage.getItem("username")){
+        loggedInUsers_name = ", " +  sessionStorage.getItem("username");
+    }
+    document.getElementById("users_name").textContent = loggedInUsers_name;
+}
