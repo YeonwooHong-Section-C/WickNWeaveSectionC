@@ -8,13 +8,15 @@ let addCart = document.querySelector('.add');
 let loggedIn = JSON.parse(sessionStorage.getItem('username')), remember = JSON.parse(localStorage.getItem('username'));
 let currentProduct = JSON.parse(localStorage.getItem('currentProduct'));
 
+let cart = [];
+
 if (loggedIn || remember){
     let memberCart = JSON.parse(localStorage.getItem('cart_1'));
+    cart = memberCart;
 } else {
     let notMemberCart = JSON.parse(localStorage.getItem('cart_2'));
+    cart = notMemberCart;
 }
-
-let cart = [];
 
 const productsArray = [
     {
@@ -105,7 +107,6 @@ function currentSwap(product, main){
                 info.textContent = product.description;
                 addCart.id = product.id;
                 image.src=mainsrc;
-
         }
     });
 }
