@@ -8,13 +8,23 @@ let addCart = document.querySelector('.add');
 let loggedIn = JSON.parse(sessionStorage.getItem('username')), remember = JSON.parse(localStorage.getItem('username'));
 let currentProduct = JSON.parse(localStorage.getItem('currentProduct'));
 
-if (loggedIn || remember){
-    let memberCart = JSON.parse(localStorage.getItem('cart_1'));
+// if (loggedIn || remember){
+//     let memberCart = JSON.parse(localStorage.getItem('cart_1'));
+// } else {
+//     let notMemberCart = JSON.parse(localStorage.getItem('cart_2'));
+// }
+
+//check if cart is empty 
+if (cart.length == 0) {
+    let cart = [];
 } else {
-    let notMemberCart = JSON.parse(localStorage.getItem('cart_2'));
+    if (loggedIn || remember) {
+        let memberCart = JSON.parse(localStorage.getItem('cart_1'));
+    } else {
+        let notMemberCart = JSON.parse(localStorage.getItem('cart_2'));
+    }
 }
 
-let cart = [];
 
 const productsArray = [
     {
@@ -105,7 +115,6 @@ function currentSwap(product, main){
                 info.textContent = product.description;
                 addCart.id = product.id;
                 image.src=mainsrc;
-
         }
     });
 }
