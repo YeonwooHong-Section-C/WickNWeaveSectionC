@@ -14,9 +14,9 @@ const cartItemRemember = localStorage.getItem('cart_1');
 const cartItem = localStorage.getItem('cart_2');
 let itemLength = 0
 
-if (cartItem) {
+if (cartItem != 'null' && cartItem) {
   itemLength = JSON.parse(cartItem).length;
-} else if (cartItemRemember) {
+} else if (cartItemRemember != 'null' && cartItemRemember) {
   itemLength = JSON.parse(cartItemRemember).length;
 }
 
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Redirect to home page or perform other actions, change login btn to username
         const element = document.getElementById('login');
-        element.textContent = `Hello, ${username}`
+        element.textContent = `Hello, ${(username)}`
 
         window.location.href = 'landing.html';
       } else {
