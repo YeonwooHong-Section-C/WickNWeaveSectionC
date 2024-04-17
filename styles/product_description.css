@@ -1,8 +1,19 @@
+* {
+    font-family: 'Barlow', sans-serif;
+}
+
 body {
-    font-family: 'Roboto Condensed', sans-serif;
     background-color: #fefaf0;
 }
 
+.image{
+    cursor: pointer;
+}
+
+.image:hover{
+    opacity: 0.8;
+    transition: 0.5s;
+}
 .carousel-row {
     margin: auto;
 }
@@ -23,9 +34,6 @@ body {
     height: 200px;
 }
 
-.product-desc {
-    display: inline-block;
-}
 
 .product-left img {
     width: 100%;
@@ -66,6 +74,9 @@ select {
     color: #fefaf0;
 }
 
+.add:hover{
+    border: 1px solid #403f2b;
+}
 .buy {
     border: 1px solid #403f2b;
 }
