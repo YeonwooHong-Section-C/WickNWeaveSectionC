@@ -18,9 +18,9 @@ function cartNum(){
   const cartItem = localStorage.getItem('cart_2');
   let itemLength = 0
   
-  if (cartItem != 'null' && cartItem) {
+  if (cartItem != null && cartItem) {
     itemLength = JSON.parse(cartItem).length;
-  } else if (cartItemRemember != 'null' && cartItemRemember) {
+  } else if (cartItemRemember != null && cartItemRemember) {
     itemLength = JSON.parse(cartItemRemember).length;
   }
   

@@ -194,3 +194,7 @@ header .btn{
   border-top: 1px solid rgb(48, 48, 36);
   font-size: 15px;
 }
+
+body > section {
+  min-height: calc(100vh - 18rem);
+}

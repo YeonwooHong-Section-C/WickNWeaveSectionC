@@ -14,7 +14,7 @@ let cart = [];
 
 if (loggedIn || remember) {
     let memberCart = JSON.parse(localStorage.getItem('cart_1'));
-    if (localStorage.getItem('cart_1')) {
+    if (localStorage.getItem('cart_1') != null && localStorage.getItem('cart_1')) {
         cart = memberCart;
     }
 } else {
@@ -104,7 +104,6 @@ addCart.addEventListener('click', function () {
 });
 
 // loading image from product page
-
 function currentSwap(product, main) {
     images.forEach(image => {
         if (product.prod_img == image.src) {
