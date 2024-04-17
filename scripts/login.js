@@ -20,7 +20,7 @@ function cartNum(){
   
   if (cartItem != null && cartItem) {
     itemLength = JSON.parse(cartItem).length;
-  } else if (cartItemRemember != null && cartItemRemember) {
+  } if (cartItemRemember != null && cartItemRemember) {
     itemLength = JSON.parse(cartItemRemember).length;
   }
   
@@ -29,9 +29,9 @@ function cartNum(){
 
   if (cart_element.childNodes.length > 1) {
       cart_element.replaceChild(numOfItems, cart_element.lastChild);
-    } else {
+  } else {
       cart_element.appendChild(numOfItems);
-    }
+  }
 }
 
 

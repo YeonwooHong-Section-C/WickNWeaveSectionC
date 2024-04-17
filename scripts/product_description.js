@@ -14,7 +14,7 @@ let cart = [];
 
 if (loggedIn || remember) {
     let memberCart = JSON.parse(localStorage.getItem('cart_1'));
-    if (localStorage.getItem('cart_1') != null && localStorage.getItem('cart_1')) {
+    if (localStorage.getItem('cart_1')) {
         cart = memberCart;
     }
 } else {
