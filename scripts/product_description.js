@@ -1,3 +1,5 @@
+import { cartNum } from "../scripts/login.js";
+
 let images = document.querySelectorAll('.image');
 let main = document.querySelector('.main-img');
 let productName = document.querySelector('.product-name');
@@ -10,9 +12,9 @@ let currentProduct = JSON.parse(localStorage.getItem('currentProduct'));
 
 let cart = [];
 
-if (loggedIn || remember){
+if (loggedIn || remember) {
     let memberCart = JSON.parse(localStorage.getItem('cart_1'));
-    if (localStorage.getItem('cart_1')){
+    if (localStorage.getItem('cart_1')) {
         cart = memberCart;
     }
 } else {
@@ -68,7 +70,7 @@ images.forEach(image => {
         productsArray.forEach(product => {
             if (main.src == product.prod_img) {
                 productName.textContent = product.prod_name;
-                price.textContent = product.prod_price;
+                price.textContent = `$${product.prod_price}.00`;
                 main.id = product.id;
                 info.textContent = product.description;
                 addCart.id = product.id;
@@ -83,41 +85,45 @@ addCart.addEventListener('click', function () {
     productsArray.forEach(product => {
         if (addCart.id == product.id) {
             product.prod_quantity = quantity;
-            if ((loggedIn || remember) && typeof notMemberCart != undefined){
-                console.log("abc");
+            if (loggedIn || remember) {
                 checkCopy(cart, product);
-                console.log("abc1");
                 localStorage.setItem('cart_1', JSON.stringify(cart));
             } else {
-                checkCopy(cart, product);
-                localStorage.setItem('cart_2', JSON.stringify(cart));
+                if (cart == null) {
+                    cart = [];
+                    checkCopy(cart, product);
+                    localStorage.setItem('cart_2', JSON.stringify(cart));
+                } else {
+                    checkCopy(cart, product);
+                    localStorage.setItem('cart_2', JSON.stringify(cart));
+                }
             }
-            console.log(cart);
         }
-        
     });
+    cartNum();
 });
 
 // loading image from product page
 
-function currentSwap(product, main){
+function currentSwap(product, main) {
     images.forEach(image => {
-        if (product.prod_img == image.src){
+        if (product.prod_img == image.src) {
             let mainsrc = main.src;
             main.src = product.prod_img;
             productName.textContent = product.prod_name;
-                price.textContent = product.prod_price;
-                main.id = product.id;
-                info.textContent = product.description;
-                addCart.id = product.id;
-                image.src=mainsrc;
+            price.textContent = `$${product.prod_price}.00`;
+            console.log(price.textContent);
+            main.id = product.id;
+            info.textContent = product.description;
+            addCart.id = product.id;
+            image.src = mainsrc;
         }
     });
 }
 
 currentSwap(currentProduct, main);
 
-//function to overwrite value in array if duplicate is present
+// function to overwrite value in array if duplicate is present
 function checkCopy(array, item, key = 'id') {
     const index = array.findIndex(e => e[key] == item[key]);
     if (index >= 0) {
@@ -127,6 +133,3 @@ function checkCopy(array, item, key = 'id') {
         array.push(item);
     }
 };
-
-
-

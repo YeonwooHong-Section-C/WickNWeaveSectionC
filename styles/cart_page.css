@@ -30,7 +30,7 @@ body {
 }
 
 .checkoutButton {
-    background-color: #757548;
+    background-color: #403f2b ;
 
     border-radius: 25px;
     color: rgb(254, 250, 240);
@@ -113,8 +113,8 @@ h4 {
     display: block;
 }
 
-.checkoutButton:hover {
-    background-color: #757548c0;
+.checkoutButton:hover, .modalBtnCust:hover {
+    background-color: #403f2bbf !important;
 }
 
 .productImageInCart {
@@ -138,13 +138,19 @@ dd {
 }
 
 .modalBtnCust {
-    background-color: #757548 !important;
+    background-color: #403f2b !important;
     color: white !important;
     border-radius: 25px !important;
 }
 
 .removeElement {
     animation: removeElementAnimation forwards 0.7s ease-out 1;
+}
+
+
+.custCSSForModal{
+    max-height: 80vh;
+    overflow: scroll;
 }
 
 @keyframes removeElementAnimation {

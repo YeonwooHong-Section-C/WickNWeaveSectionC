@@ -1,3 +1,5 @@
+export { cartNum };
+
 // If logged in, show username at navbar instead of login btn
 const localUsername = localStorage.getItem('username');
 const sessionUsername = sessionStorage.getItem('username');
@@ -9,20 +11,28 @@ if (localUsername || sessionUsername) {
 }
 
 
-// If cart item added, show the number of items at navbar
-const cartItemRemember = localStorage.getItem('cart_1');
-const cartItem = localStorage.getItem('cart_2');
-let itemLength = 0
+// If cart item's added, show the number of items at navbar
+cartNum();
+function cartNum(){
+  const cartItemRemember = localStorage.getItem('cart_1');
+  const cartItem = localStorage.getItem('cart_2');
+  let itemLength = 0
+  
+  if (cartItem != 'null' && cartItem) {
+    itemLength = JSON.parse(cartItem).length;
+  } else if (cartItemRemember != 'null' && cartItemRemember) {
+    itemLength = JSON.parse(cartItemRemember).length;
+  }
+  
+  const cart_element = document.getElementById('cart');
+  let numOfItems = document.createTextNode(` (${itemLength})`);
 
-if (cartItem != 'null' && cartItem) {
-  itemLength = JSON.parse(cartItem).length;
-} else if (cartItemRemember != 'null' && cartItemRemember) {
-  itemLength = JSON.parse(cartItemRemember).length;
+  if (cart_element.childNodes.length > 1) {
+      cart_element.replaceChild(numOfItems, cart_element.lastChild);
+    } else {
+      cart_element.appendChild(numOfItems);
+    }
 }
-
-const cart_element = document.getElementById('cart');
-const numOfItems = document.createTextNode(` (${itemLength})`);
-cart_element.appendChild(numOfItems);
 
 
 document.addEventListener('DOMContentLoaded', function () {
