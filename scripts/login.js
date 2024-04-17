@@ -1,8 +1,11 @@
 export { cartNum };
 
 // If logged in, show username at navbar instead of login btn
-const localUsername = localStorage.getItem('username');
-const sessionUsername = sessionStorage.getItem('username');
+const localUsername = JSON.parse(localStorage.getItem('username'));
+const sessionUsername = JSON.parse(sessionStorage.getItem('username'));
+
+const const_username = "admin";
+const const_password = "password123";
 
 if (localUsername || sessionUsername) {
   const login_element = document.getElementById('login');
@@ -14,14 +17,14 @@ if (localUsername || sessionUsername) {
 // If cart item's added, show the number of items at navbar
 cartNum();
 function cartNum(){
-  const cartItemRemember = localStorage.getItem('cart_1');
-  const cartItem = localStorage.getItem('cart_2');
+  const cartItemRemember = JSON.parse(localStorage.getItem('cart_1'));
+  const cartItem = JSON.parse(localStorage.getItem('cart_2'));
   let itemLength = 0
   
   if (cartItem != null && cartItem) {
-    itemLength = JSON.parse(cartItem).length;
+    itemLength = cartItem.length;
   } if (cartItemRemember != null && cartItemRemember) {
-    itemLength = JSON.parse(cartItemRemember).length;
+    itemLength = cartItemRemember.length;
   }
   
   const cart_element = document.getElementById('cart');
@@ -46,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const rememberMe = document.getElementById('rememberMe').checked;
 
       // Empty value is not allowded
-      if (username && password) {
+      if (username === const_username && password === const_password) {
         // Store user data in session storage
         sessionStorage.setItem('loggedIn', JSON.stringify(true));
         sessionStorage.setItem('username', JSON.stringify(username));
@@ -75,7 +78,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loggedIn = sessionStorage.getItem('loggedIn');
 
     if (rememberMe && loggedIn) {
-      const storedUsername = localStorage.getItem('username');
+      const storedUsername = JSON.parse(localStorage.getItem('username'));
       sessionStorage.setItem('username', storedUsername);
 
       const element = document.getElementById('login');
