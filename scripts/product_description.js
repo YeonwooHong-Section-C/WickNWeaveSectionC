@@ -1,3 +1,5 @@
+import { cartNum } from "../scripts/login.js";
+
 let images = document.querySelectorAll('.image');
 let main = document.querySelector('.main-img');
 let productName = document.querySelector('.product-name');
@@ -96,6 +98,7 @@ addCart.addEventListener('click', function () {
         }
         
     });
+    cartNum();
 });
 
 // loading image from product page
@@ -127,6 +130,3 @@ function checkCopy(array, item, key = 'id') {
         array.push(item);
     }
 };
-
-
-
