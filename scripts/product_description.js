@@ -24,36 +24,83 @@ if (loggedIn || remember) {
 
 const productsArray = [
     {
-        prod_name: "Product 1",
-        prod_price: 150,
-        prod_img: 'https://placedog.net/574/584?id=57',
-        description: 'product description for 1',
+        prod_name: "Dark Green Socks",
+        prod_price: 5,
+        prod_img: 'https://images.unsplash.com/photo-1640026199235-c24aa417b552?q=80&w=3730&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        description: '',
         prod_quantity: null,
         id: 1
     },
     {
-        prod_name: "Product 2",
-        prod_price: 20,
-        prod_img: 'https://placedog.net/496/476?id=122',
+        prod_name: "Aroma Therapy",
+        prod_price: 12,
+        prod_img: 'https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D',
         description: 'product description for 2',
         prod_quantity: null,
         id: 2
     },
     {
-        prod_name: "Product 3",
-        prod_price: 30,
-        prod_img: 'https://placedog.net/541/553?id=119',
+        prod_name: "Grey Socks",
+        prod_price: 6,
+        prod_img: 'https://images.unsplash.com/photo-1613151848917-80e67f421fff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8',
         description: 'product description for 3',
         prod_quantity: null,
         id: 3
     },
     {
-        prod_name: "Product 4",
+        prod_name: "Pine Forest",
         prod_price: 10,
-        prod_img: 'https://placedog.net/807/669?id=142',
-        description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet consectetur adipiscing elit ut aliquam purus sit amet. Urna id volutpat lacus laoreet non curabitur gravida. Id diam vel quam elementum. Vulputate eu scelerisque felis imperdiet proin fermentum leo vel. Curabitur vitae nunc sed velit dignissim sodales ut eu. Egestas pretium aenean pharetra magna ac placerat vestibulum. Mi proin sed libero enim sed faucibus turpis. Arcu non sodales neque sodales ut etiam sit. bortis feugiat. Nisl condimentum id venenatis a. Vel pretium lectus quam id leo in vitae turpis massa.',
+        prod_img: 'https://images.unsplash.com/photo-1595055258834-8290e4181590?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8',
+        description: '',
         prod_quantity: null,
         id: 4
+    }, {
+        prod_name: "Forest",
+        prod_price: 13,
+        prod_img: 'https://images.unsplash.com/photo-1599591590264-22dbba64111c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D',
+        description: '',
+        prod_quantity: null,
+        id: 5
+    },
+    {
+        prod_name: "Lychee",
+        prod_price: 11,
+        prod_img: 'https://images.unsplash.com/photo-1602952706017-f3cc19eb98af?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D',
+        description: 'product description for 2',
+        prod_quantity: null,
+        id: 6
+    },
+    {
+        prod_name: "Ambre",
+        prod_price: 9,
+        prod_img: 'https://images.unsplash.com/photo-1617213146999-f33c20d2a534?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D',
+        description: 'product description for 3',
+        prod_quantity: null,
+        id: 7
+    },
+    {
+        prod_name: "New York City",
+        prod_price: 8,
+        prod_img: 'https://images.unsplash.com/photo-1573744364765-f9eedccc45fe?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8',
+        description: '',
+        prod_quantity: null,
+        id: 8
+    },
+    {
+        prod_name: "Yellow Socks",
+        prod_price: 7,
+        prod_img: 'https://images.unsplash.com/photo-1640025867572-f6b3a8410c81?q=80&w=1528&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        description: '',
+        prod_quantity: null,
+        id: 9
+    },
+    {
+        prod_name: "Knit Socks",
+        prod_price: 9,
+        prod_img: 'https://images.unsplash.com/photo-1610134142835-e1724e0ed53d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+        description: '',
+        prod_quantity: null,
+        id: 10
     }
 ]
 
@@ -84,12 +131,12 @@ addCart.addEventListener('click', function () {
     let quantity = document.querySelector('.quantity').value;
     productsArray.forEach(product => {
         if (addCart.id == product.id) {
-            if (quantity > 25){
+            if (quantity > 25) {
                 product.prod_quantity = "25";
             } else {
                 product.prod_quantity = quantity;
             }
-           
+
             if (loggedIn || remember) {
                 checkCopy(cart, product);
                 localStorage.setItem('cart_1', JSON.stringify(cart));
