@@ -147,6 +147,13 @@ dd {
     animation: removeElementAnimation forwards 0.7s ease-out 1;
 }
 
+
+.custCSSForModal{
+    max-height: 80vh;
+    min-height: 80vh;
+    overflow: scroll;
+}
+
 @keyframes removeElementAnimation {
     0% {
         transform: scale(1);
