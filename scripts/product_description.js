@@ -1,3 +1,5 @@
+import { cartNum } from "../scripts/login.js";
+
 let images = document.querySelectorAll('.image');
 let main = document.querySelector('.main-img');
 let productName = document.querySelector('.product-name');
@@ -103,10 +105,10 @@ addCart.addEventListener('click', function () {
             }
         }
     });
+    cartNum();
 });
 
 // loading image from product page
-
 function currentSwap(product, main) {
     images.forEach(image => {
         if (product.prod_img == image.src) {
@@ -135,6 +137,3 @@ function checkCopy(array, item, key = 'id') {
         array.push(item);
     }
 };
-
-
-
