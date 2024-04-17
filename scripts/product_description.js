@@ -82,7 +82,12 @@ addCart.addEventListener('click', function () {
     let quantity = document.querySelector('.quantity').value;
     productsArray.forEach(product => {
         if (addCart.id == product.id) {
-            product.prod_quantity = quantity;
+            if (quantity > 25){
+                product.prod_quantity = "25";
+            } else {
+                product.prod_quantity = quantity;
+            }
+           
             if (loggedIn || remember) {
                 checkCopy(cart, product);
                 localStorage.setItem('cart_1', JSON.stringify(cart));
