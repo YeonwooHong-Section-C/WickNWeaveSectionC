@@ -150,7 +150,6 @@ dd {
 
 .custCSSForModal{
     max-height: 80vh;
-    min-height: 80vh;
     overflow: scroll;
 }
 
