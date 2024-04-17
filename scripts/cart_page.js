@@ -169,10 +169,10 @@ const orderPlaced = () => {
 
 
     if(JSON.parse(localStorage.getItem('rememberMe'))){
-        loggedInUsers_name = ", " + localStorage.getItem("username");
+        loggedInUsers_name = ", " + JSON.parse(localStorage.getItem("username"));
     }
     else if(sessionStorage.getItem("username")){
-        loggedInUsers_name = ", " +  sessionStorage.getItem("username");
+        loggedInUsers_name = ", " +  JSON.parse(sessionStorage.getItem("username"));
     }
     document.getElementById("users_name").textContent = loggedInUsers_name;
 }
