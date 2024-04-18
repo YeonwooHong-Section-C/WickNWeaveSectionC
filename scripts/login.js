@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function () {
       const password = document.getElementById('password').value;
       const rememberMe = document.getElementById('rememberMe').checked;
 
-      // Empty value is not allowded
+      // Validation with setting info
       if (username === const_username && password === const_password) {
         // Store user data in session storage
         sessionStorage.setItem('loggedIn', JSON.stringify(true));

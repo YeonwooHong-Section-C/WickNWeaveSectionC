@@ -9,20 +9,22 @@ body {
 }
 
 @media only screen and (max-width: 768px) {
-  body {
-    font-size: 14px;
+  .main-navbar, .footer {
+    font-size: 17px;
   }
 }
 
-@media only screen and (max-width: 576px) {
-  body {
-    font-size: 12px;
+@media only screen and (max-width: 611px) {
+  .main-navbar, .nav-dropbtn, .logo-link, 
+  .dropdown-link, .footer {
+    font-size: 14px !important;
   }
 }
 
-@media only screen and (max-width: 356px) {
-  body {
-    font-size: 7px;
+@media only screen and (max-width: 487px) {
+  .main-navbar, .nav-dropbtn, .logo-link, 
+  .dropdown-link, .footer {
+    font-size: 9px !important;
   }
 }
 
