@@ -1,49 +1,73 @@
- .ball {
-min-width: 100%;
-height: 400px;
-    background-repeat: no-repeat;
-    background-size: 100% 100%;
+.ball {
+    min-width: 100%;
+    height: 400px;
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        
+    }
+    carousel-row {
+        display: block;
+        margin:auto;
+    }
     
-}
-carousel-row {
-    display: block;
-    margin:auto;
-}
-
-.carousel .carousel-item img {
-    object-fit: cover;
-    object-position: center;
-    height: 200px;
-    border-radius: 12px;
-}
-.carousel-inner {
-    padding: 2rem;
-    margin: auto;
-}
-
-.carousel-indicators {
-    margin-bottom: 0;
-}
-
-.carousel-control-next,
-.carousel-control-prev {
-    width: 2rem;
-}
-.block {
-    background-color: #e8e59b;
-    margin: auto;
-    width: 100%;
-    height: 300px;
-}
-
-.card:hover{
-    transform: scale(1.055);
+    .carousel .carousel-item img {
+        /* object-fit: cover; */
+        object-position: center;
+        height: 300px;
+        border-radius: 12px;
+    }
+    .carousel-inner {
+        padding: 2rem;
+        margin: auto;
+    }
     
-}
-
-.a {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px 0;
+    .carousel-indicators {
+        margin-bottom: 0;
+    }
     
-}
+    .carousel-control-next,
+    .carousel-control-prev {
+        width: 2rem;
+    }
+    .block {
+        padding-bottom: 2%;
+    }
+    
+    .card:hover{
+        transform: scale(1.02);
+        
+    }
+    
+    .a {
+        display: flex;
+        justify-content: center;
+        padding: 20px 0;
+        
+    }
+    
+    .card{
+        background-color: #fefaf0 !important;
+        color: black !important;
+        font-weight: lighter !important;
+        text-align: center;
+    }
+    
+    body{
+        background-color: #fefaf0 !important;
+    }
+    
+    .shop_by_collection{
+        margin: 0 2%;
+        width: 30%;
+        border-radius: 5% !important;
+    }
+    
+    .layer {
+        background-color: rgba(0, 0, 0, 0.508);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: 5% !important;
+    }
