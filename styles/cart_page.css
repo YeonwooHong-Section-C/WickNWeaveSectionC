@@ -153,6 +153,7 @@ dd {
     overflow: scroll;
 }
 
+/* Animation for when removing product from cart */
 @keyframes removeElementAnimation {
     0% {
         transform: scale(1);
@@ -177,6 +178,7 @@ dd {
     }
 }
 
+/* media queries */
 @media (max-width: 450px) {
     .cartParentContainer {
         flex-direction: column;

@@ -22,8 +22,8 @@
 
 
     <script src="../scripts/cart_page.js"></script>
-    
-    
+
+
 
     <!-- font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -54,8 +54,9 @@
         </div>
     </div>
 
-
+    <!-- cart main container -->
     <main class="cartParentContainer">
+        <!-- cart section -->
         <section>
             <div>
                 <h4>My cart</h4>
@@ -63,6 +64,7 @@
                 </ul>
             </div>
 
+            <!-- div for when the cart is empty -->
             <div class="text-center emptyCartSection">
                 <div>
                     <h5>Cart is empty</h5>
@@ -70,6 +72,7 @@
                 </div>
             </div>
         </section>
+        <!-- order summary section -->
         <aside class="col-lg-2 ms-5 nonEmptyCartSection">
             <h4>Order Summary</h4>
             <div class="w-100">
@@ -89,7 +92,7 @@
                 data-bs-target="#ticketsBookedModal">Checkout</button>
         </aside>
 
-
+        <!-- Receipt modal -->
         <div class="modal fade" id="ticketsBookedModal" data-bs-backdrop="static" tabindex="-1"
             aria-labelledby="ticketsBookedModalLabel" aria-hidden="true" style="background: rgba(0,0,0,0.8);">
             <div class="modal-dialog modal-dialog-centered">

@@ -7,14 +7,17 @@ const TAXES = 0.13;
 let local_storage_name;
 let loggedInUsers_name = "";
 
+// retrieve the data from correct localstorage item based on logged in or non logged in user
 const pullCartData = () => {
+    // sets the local storage item name for logged in user
     if(sessionStorage.getItem('username') || localStorage.getItem('username')){
         local_storage_name = "cart_1";
     }
-    else{
+    else{//sets the local storage item name for non logged in user
         local_storage_name = "cart_2";
     }
 
+    // pulls the data from local storage
     productsInCart = JSON.parse(localStorage.getItem(`${local_storage_name}`));
 }
 
@@ -140,7 +143,6 @@ $(document).ready(function () {
     if(!toggleVisibility()){
         loadCartElementsToPage();
     }
-
     
     document.querySelector('.checkoutButton').addEventListener("click", orderPlaced);
 });
@@ -150,7 +152,7 @@ window.addEventListener("beforeunload", () => {
     localStorage.setItem(`${local_storage_name}`, JSON.stringify(productsInCart));
 });
 
-// runs when the user checks out
+// runs when the user checks out and loads the receipt modal 
 const orderPlaced = () => {
     document.getElementById("reciept").innerHTML = document.getElementById("productCartList").innerHTML;
     document.getElementById("productCartList").innerHTML = "";
@@ -168,6 +170,7 @@ const orderPlaced = () => {
     localStorage.removeItem("cart");
 
 
+    //gets the users name from local storage
     if(JSON.parse(localStorage.getItem('username'))){
         loggedInUsers_name = ", " + JSON.parse(localStorage.getItem("username"));
     }
