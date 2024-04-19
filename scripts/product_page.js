@@ -24,7 +24,6 @@ function countProducts(){
     console.log(product.length); 
 }
 
-window.onload = countProducts; 
 window.onload = productList   // call function when load
 
 let productCard = document.querySelectorAll(".card"); // getting cards
@@ -38,6 +37,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1640026199235-c24aa417b552?q=80&w=3730&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         description: '',
         prod_quantity: null,
+        prod_type: 'sock',
         id: 1
     },
     {
@@ -46,6 +46,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1572726729207-a78d6feb18d7?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D',
         description: 'product description for 2',
         prod_quantity: null,
+        prod_type: 'candle',
         id: 2
     },
     {
@@ -54,6 +55,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1613151848917-80e67f421fff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8',
         description: 'product description for 3',
         prod_quantity: null,
+        prod_type: 'sock',
         id: 3
     },
     {
@@ -62,6 +64,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1595055258834-8290e4181590?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEwfHx8ZW58MHx8fHx8',
         description: '',
         prod_quantity: null,
+        prod_type: 'candle',
         id: 4
     },{
         prod_name: "Forest",
@@ -69,6 +72,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1599591590264-22dbba64111c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D',
         description: '',
         prod_quantity: null,
+        prod_type: 'candle',
         id: 5
     },
     {
@@ -77,6 +81,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1602952706017-f3cc19eb98af?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fHw%3D',
         description: 'product description for 2',
         prod_quantity: null,
+        prod_type: 'candle',
         id: 6
     },
     {
@@ -85,6 +90,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1617213146999-f33c20d2a534?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D',
         description: 'product description for 3',
         prod_quantity: null,
+        prod_type: 'candle',
         id: 7
     },
     {
@@ -93,6 +99,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1573744364765-f9eedccc45fe?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8',
         description: '',
         prod_quantity: null,
+        prod_type: 'candle',
         id: 8
     },
     {
@@ -101,6 +108,7 @@ const productsArray = [
         prod_img: 'https://images.unsplash.com/photo-1610134142835-e1724e0ed53d?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
         description: '',
         prod_quantity: null,
+        prod_type: 'sock',
         id: 10
     }
 ]
@@ -111,9 +119,9 @@ function productList(){
         let newList = document.createElement('div');
         newList.className = 'col';
         newList.innerHTML=`
-        <div class="card h-100 candle product-info" id=${product.id}>
+        <div class="card h-100 ${product.prod_type} product-info" id=${product.id}>
           <img src="${product.prod_img}" class="card-img-top product-image"
-            alt="Ooooops! There seems to be a problem.">
+            alt="Ooooops! There seems to be a problem." max-height=>
           <div class="card-body">
             <h5 class="card-title product-name">${product.prod_name}</h5>
             <p class="card-text product-price">$${product.prod_price}</p>
@@ -122,6 +130,7 @@ function productList(){
       </div>
       `;
         prodList.appendChild(newList);
+        countProducts()
     })
 }
 
