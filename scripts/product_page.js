@@ -26,7 +26,7 @@ function countProducts(){
 
 window.onload = productList   // call function when load
 
-let productCard = document.querySelectorAll(".card"); // getting cards
+
 
 // product Array
 
@@ -131,19 +131,22 @@ function productList(){
       `;
         prodList.appendChild(newList);
         countProducts()
+        clickOnProduct()
     })
 }
 
 function directItems(id){
     console.log(id);
-    const currentProduct = productsArray.find(item => item.id == id)
+    const currentProduct = productsArray.find(product => product.id == id)
     console.log(currentProduct);
     localStorage.setItem('currentProduct', JSON.stringify(currentProduct))
     window.location.href = "../pages/product_description.html";
 }
 
-
-productCard.forEach((product) => {      // event listener to direct to product detail page
+function clickOnProduct(){
+    let productCard = document.querySelectorAll(".product-info"); // getting cards
+    console.log(productCard)
+    productCard.forEach((product) => {      // event listener to direct to product detail page
     product.addEventListener("click", (event) => {
         const parentElement_1 = event.target.parentElement;
         if(parentElement_1.classList.contains("card-body"))
@@ -157,4 +160,4 @@ productCard.forEach((product) => {      // event listener to direct to product d
         }
        // directItems(event);
     })
-});
+});}
