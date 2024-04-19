@@ -168,7 +168,7 @@ const orderPlaced = () => {
     localStorage.removeItem("cart");
 
 
-    if(JSON.parse(localStorage.getItem('rememberMe'))){
+    if(JSON.parse(localStorage.getItem('username'))){
         loggedInUsers_name = ", " + JSON.parse(localStorage.getItem("username"));
     }
     else if(sessionStorage.getItem("username")){
