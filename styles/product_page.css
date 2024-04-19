@@ -191,11 +191,11 @@ header .btn{
 
 /* show and hide card */
 
-.card.show {
+.show {
     display: block;
 }
 
-.card.hide {
+.hide {
     display: none;
 }
 

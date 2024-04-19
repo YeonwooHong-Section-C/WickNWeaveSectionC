@@ -3,13 +3,15 @@
 document.querySelectorAll('.filter-button').forEach(function(a) {
     a.addEventListener('click', function() { // click the category event listener to begin
         let filter = a.getAttribute('data-filter');
+        console.log(filter);
         document.querySelectorAll('.card').forEach(function(card) { // get all cards
-            if (filter === 'all' || card.classList.contains(filter)) { // match data filter to card class
-                card.classList.add('show'); // show product if hidden
-                card.classList.remove('hide');  // show product if hidden
+            if (card.parentElement.classList.contains(filter)) { // match data filter to card class
+                card.parentElement.classList.add('show'); // show product if hidden
+                card.parentElement.classList.remove('hide');  // show product if hidden
+                // console.log(card.parentElement.classList);
             }else {
-                card.classList.remove('show'); // remove show if toggled
-                card.classList.add('hide'); // hide product
+                card.parentElement.classList.add('hide'); // remove show if toggled
+                card.parentElement.classList.remove('show'); // hide product
             }
         });
     });
@@ -21,7 +23,7 @@ function countProducts(){
     let product = document.querySelectorAll('.card'); // get all products
     let counter = document.getElementById('productCounter'); 
     counter.innerHTML = `${product.length} products`; // update the text with how many cards there are
-    console.log(product.length); 
+    // console.log(product.length); 
 }
 
 window.onload = productList   // call function when load
@@ -117,9 +119,9 @@ function productList(){
     productsArray.forEach((product) => {
         let prodList = document.getElementById('prodsList');
         let newList = document.createElement('div');
-        newList.className = 'col';
+        newList.className = `col ${product.prod_type} `;
         newList.innerHTML=`
-        <div class="card h-100 ${product.prod_type} product-info" id=${product.id}>
+        <div class="card h-100 product-info" id=${product.id}>
           <img src="${product.prod_img}" class="card-img-top product-image"
             alt="Ooooops! There seems to be a problem." max-height=>
           <div class="card-body">
@@ -136,26 +138,26 @@ function productList(){
 }
 
 function directItems(id){
-    console.log(id);
+    // console.log(id);
     const currentProduct = productsArray.find(product => product.id == id)
-    console.log(currentProduct);
+    // console.log(currentProduct);
     localStorage.setItem('currentProduct', JSON.stringify(currentProduct))
     window.location.href = "../pages/product_description.html";
 }
 
 function clickOnProduct(){
     let productCard = document.querySelectorAll(".product-info"); // getting cards
-    console.log(productCard)
+    // console.log(productCard)
     productCard.forEach((product) => {      // event listener to direct to product detail page
     product.addEventListener("click", (event) => {
         const parentElement_1 = event.target.parentElement;
         if(parentElement_1.classList.contains("card-body"))
         {
-            console.log(parentElement_1.parentElement.id);    //make sure clicking on child directs to parent
+            // console.log(parentElement_1.parentElement.id);    //make sure clicking on child directs to parent
             directItems(parentElement_1.parentElement.id);
         }
         else{
-            console.log(parentElement_1.id);
+            // console.log(parentElement_1.id);
             directItems(parentElement_1.id);
         }
        // directItems(event);
