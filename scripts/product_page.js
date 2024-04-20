@@ -1,15 +1,14 @@
 // show and hide card
 
-document.querySelectorAll('.filter-button').forEach(function(a) {
-    a.addEventListener('click', function() { // click the category event listener to begin
+document.querySelectorAll('.filter-button').forEach(function (a) {
+    a.addEventListener('click', function () { // click the category event listener to begin
         let filter = a.getAttribute('data-filter');
         console.log(filter);
-        document.querySelectorAll('.card').forEach(function(card) { // get all cards
-            if (card.parentElement.classList.contains(filter)) { // match data filter to card class
+        document.querySelectorAll('.card').forEach(function (card) { // get all cards
+            if (filter === 'all' || card.parentElement.classList.contains(filter)) { // match data filter to card class
                 card.parentElement.classList.add('show'); // show product if hidden
                 card.parentElement.classList.remove('hide');  // show product if hidden
-                // console.log(card.parentElement.classList);
-            }else {
+            } else {
                 card.parentElement.classList.add('hide'); // remove show if toggled
                 card.parentElement.classList.remove('show'); // hide product
             }
@@ -19,9 +18,9 @@ document.querySelectorAll('.filter-button').forEach(function(a) {
 
 // show updated product count
 
-function countProducts(){
+function countProducts() {
     let product = document.querySelectorAll('.card'); // get all products
-    let counter = document.getElementById('productCounter'); 
+    let counter = document.getElementById('productCounter');
     counter.innerHTML = `${product.length} products`; // update the text with how many cards there are
     // console.log(product.length); 
 }
@@ -68,7 +67,7 @@ const productsArray = [
         prod_quantity: null,
         prod_type: 'candle',
         id: 4
-    },{
+    }, {
         prod_name: "Forest",
         prod_price: 13,
         prod_img: 'https://images.unsplash.com/photo-1599591590264-22dbba64111c?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D',
@@ -115,12 +114,12 @@ const productsArray = [
     }
 ]
 
-function productList(){
+function productList() {
     productsArray.forEach((product) => {
         let prodList = document.getElementById('prodsList');
         let newList = document.createElement('div');
         newList.className = `col ${product.prod_type} `;
-        newList.innerHTML=`
+        newList.innerHTML = `
         <div class="card h-100 product-info" id=${product.id}>
           <img src="${product.prod_img}" class="card-img-top product-image"
             alt="Ooooops! There seems to be a problem." max-height=>
@@ -137,7 +136,7 @@ function productList(){
     })
 }
 
-function directItems(id){
+function directItems(id) {
     // console.log(id);
     const currentProduct = productsArray.find(product => product.id == id)
     // console.log(currentProduct);
@@ -145,21 +144,21 @@ function directItems(id){
     window.location.href = "../pages/product_description.html";
 }
 
-function clickOnProduct(){
+function clickOnProduct() {
     let productCard = document.querySelectorAll(".product-info"); // getting cards
     // console.log(productCard)
     productCard.forEach((product) => {      // event listener to direct to product detail page
-    product.addEventListener("click", (event) => {
-        const parentElement_1 = event.target.parentElement;
-        if(parentElement_1.classList.contains("card-body"))
-        {
-            // console.log(parentElement_1.parentElement.id);    //make sure clicking on child directs to parent
-            directItems(parentElement_1.parentElement.id);
-        }
-        else{
-            // console.log(parentElement_1.id);
-            directItems(parentElement_1.id);
-        }
-       // directItems(event);
-    })
-});}
+        product.addEventListener("click", (event) => {
+            const parentElement_1 = event.target.parentElement;
+            if (parentElement_1.classList.contains("card-body")) {
+                // console.log(parentElement_1.parentElement.id);    //make sure clicking on child directs to parent
+                directItems(parentElement_1.parentElement.id);
+            }
+            else {
+                // console.log(parentElement_1.id);
+                directItems(parentElement_1.id);
+            }
+            // directItems(event);
+        })
+    });
+}
